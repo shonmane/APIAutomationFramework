@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test Suite" parallel="methods"
+       thread-count="4">
+
+    <listeners>
+        <listener
+                class-name="com.api.listeners.TestListners"/>
+    </listeners>
+
+    <test name="API Tests">
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="auth"/>-->
+<!--                <include name="user"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+        <classes>
+            <class name="com.api.models.test.authservice.LoginAPITest2"/>
+            <class name="com.api.models.test.authservice.ForgotPasswordTest"/>
+            <class name="com.api.models.test.authservice.AccountCreationTest"/>
+            <class name="com.api.models.test.userprofile.UpdateProfileTest"/>
+            <class name="com.api.models.test.userprofile.UserProfileTest"/>
+        </classes>
+    </test>
+</suite>
